@@ -1,14 +1,5 @@
-// import { BinaryTree }  from '../src/components/BinaryTree'
 import { tree } from '../src/components/BinaryTree';
 import invertBinaryTree from '../src/components/BinaryTree'
-import util from 'util';
-
-const log = (...items: any) =>
-  items.forEach((item) =>
-    console.log(util.inspect(item, { depth: null, colors: true }))
-  );
-
-
 
 const invertedTree = { 
   name: 'root', 
