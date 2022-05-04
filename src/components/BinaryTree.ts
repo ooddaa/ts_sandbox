@@ -23,17 +23,13 @@ Br Bl  Ar Al
 
 */
 
-interface BinaryTree {
+import isObject from 'lodash/isObject';
+import cloneDeep from 'lodash/cloneDeep';
+
+export interface BinaryTree {
     name: string,
     children?: { left?: BinaryTree, right?: BinaryTree }
 }
-
-// interface BinaryTree {
-//   name: 'root',
-//   children: Node
-// }
-
-
 
 export const tree: BinaryTree = { 
   name: 'root', 
@@ -55,8 +51,25 @@ export const tree: BinaryTree = {
   }
 }
 
-const result = invertTree(tree)
+export default function invertBinaryTree(tree_: BinaryTree): BinaryTree {
+  const tree = cloneDeep(tree_)
+  /* 
+    1. examine tree
+    2. if has children -> swap left<>right
+    3. recurse on children with invertBinaryTree
+  */
+  
+  let { children } = tree
 
-export default function invertTree(tree: BinaryTree): BinaryTree {
+  if (isObject(children) 
+  && children.hasOwnProperty('left') 
+  && children.hasOwnProperty('right')) {
+    /* swap left and right */
+    let _ = children['left'] as BinaryTree
+
+    /* and recurse on children */
+    children['left'] = invertBinaryTree(children['right'] as BinaryTree)
+    children['right'] = invertBinaryTree(_)
+  } 
   return tree
 }
