@@ -18,9 +18,19 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "strictNullChecks": true,
+    "types": [
+      "@types/jest",
+      "jest"
+      ],
+    "outDir": "./dist",
   },
+  "compileOnSave": true,
   "include": [
     "src"
-  ]
+  ],
+  "exclude": [
+    "__tests__/*.test.ts",
+  ],
 }
