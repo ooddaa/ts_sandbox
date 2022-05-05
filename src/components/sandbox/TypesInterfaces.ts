@@ -28,7 +28,7 @@ interface Kitten {
 
 interface Kitten {
   colour: string;
+  [key: string]: any
 }
 
-/* how do I say that there must be color and purrs and may be something else? */
-const cat: Kitten = { colour: 'black', purrs: true/* , smth: 'else' */ }
+const cat: Kitten = { colour: 'black', purrs: true, smth: 'else' }
