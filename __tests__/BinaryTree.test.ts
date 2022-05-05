@@ -1,5 +1,5 @@
-import { tree } from '../src/components/BinaryTree';
-import invertBinaryTree from '../src/components/BinaryTree'
+import { tree } from '../src/components/sandbox/BinaryTree';
+import invertBinaryTree from '../src/components/sandbox/BinaryTree'
 
 const invertedTree = { 
   name: 'root', 

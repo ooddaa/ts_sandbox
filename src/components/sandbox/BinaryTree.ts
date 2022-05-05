@@ -22,13 +22,7 @@ Br Bl  Ar Al
 
 */
 
-// import cloneDeep from 'lodash/cloneDeep';
-import util from "util";
-
-export const log = (...items: any) =>
-  items.forEach((item: any) =>
-    console.log(util.inspect(item, { depth: null, colors: true }))
-  );
+import { log } from '../../tools'
 
 export interface BinaryTree {
   name: string;
@@ -56,9 +50,7 @@ export const tree: BinaryTree = {
 };
 
 export default function invertBinaryTree(tree_: BinaryTree): BinaryTree {
-  // const tree = cloneDeep(tree_)
   const tree = JSON.parse(JSON.stringify(tree_));
-
   /* 
     1. examine tree
     2. if has children -> swap left<>right

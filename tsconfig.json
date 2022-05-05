@@ -1,37 +1,20 @@
 {
+  "extends": "@tsconfig/create-react-app/tsconfig.json",
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": false,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "strictNullChecks": true,
+    "removeComments": false,
+    "rootDir": "./src",
+    "outDir": "./dist",
     "types": [
       "@types/jest",
       "jest"
       ],
-    "outDir": "./dist",
+      "noEmit":false
   },
-  "compileOnSave": true,
-  "include": [
-    "src"
-  ],
+  "include": ["src/**/*"],
   "exclude": [
     "__tests__/*.test.ts",
-  ],
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "node_modules"
+  ]
 }

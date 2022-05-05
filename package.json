@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "@tsconfig/create-react-app": "^1.0.2",
     "@types/jest": "^27.5.0",
     "@types/lodash": "^4.14.182",
     "ts-jest": "^28.0.1"
